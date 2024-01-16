@@ -1,6 +1,5 @@
 import '#/styles/globals.css';
 import { AddressBar } from '#/ui/address-bar';
-import Byline from '#/ui/byline';
 import { GlobalNav } from '#/ui/global-nav';
 import { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
@@ -44,7 +43,6 @@ export default function RootLayout({
             <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
               <div className="rounded-lg bg-black p-3.5 lg:p-6">{children}</div>
             </div>
-            <Byline className="fixed sm:hidden" />
           </div>
         </div>
         <Analytics />
