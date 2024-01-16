@@ -47,6 +47,7 @@ export default function RootLayout({
             <Byline className="fixed sm:hidden" />
           </div>
         </div>
+        <Analytics />
       </body>
     </html>
   );
