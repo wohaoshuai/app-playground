@@ -13,10 +13,7 @@ export function NextLogo() {
       </mask>
       <g mask="url(#mask0_408_134)">
         <circle cx="90" cy="90" r="90" fill="black" />
-        <path
-          d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
-          fill="url(#paint0_linear_408_134)"
-        />
+        <path d="M90 35L25 145H155L90 35Z" fill="url(#paint0_linear_408_134)" />
         <rect
           x="115"
           y="54"
@@ -28,10 +25,10 @@ export function NextLogo() {
       <defs>
         <linearGradient
           id="paint0_linear_408_134"
-          x1="109"
-          y1="116.5"
-          x2="144.5"
-          y2="160.5"
+          x1="90"
+          y1="35"
+          x2="90"
+          y2="145"
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="white" />
