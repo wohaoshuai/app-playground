@@ -14,6 +14,12 @@ export const demos: { name: string; items: Item[] }[] = [
         description:
           'ComfyUI for Design pipelines, explore image processing, upscaling, and more.',
       },
+      {
+        name: 'Getting Started with WebUI',
+        slug: 'webui',
+        description:
+          'Effortlessly unleash your creativity with Stable Diffusion WebUI intuitive interface',
+      },
       // {
       //   name: 'Faster generation with LCM',
       //   slug: 'lcm',
