@@ -20,21 +20,26 @@ export const demos: { name: string; items: Item[] }[] = [
         description:
           'Effortlessly unleash your creativity with Stable Diffusion WebUI intuitive interface',
       },
-      // {
-      //   name: 'Faster generation with LCM',
-      //   slug: 'lcm',
-      //   description: 'Speed-up the SDXL by 5x faster generation method using LCM',
-      // },
-      // {
-      //   name: 'Basics of SDXL',
-      //   slug: 'sdxl',
-      //   description: 'Overview on how to use SDXL',
-      // },
-      // {
-      //   name: 'Intro to Controlnet',
-      //   slug: 'controlnet',
-      //   description: 'Guide the image generation using images to control by canny, depth, sytle and more',
-      // },
+    ],
+  },
+  {
+    name: 'Trending on Github',
+    items: [
+      {
+        name: 'Github Trend Week1',
+        slug: 'github-trend-001',
+        description: '#1 Discover trending topics and new tools on Github',
+      },
+    ],
+  },
+  {
+    name: 'Github热门推荐',
+    items: [
+      {
+        name: 'GitHub趋势周报 第1期',
+        slug: 'github-trend-001-cn',
+        description: '#1 在GitHub上发现热门话题和新工具',
+      },
     ],
   },
   // {
