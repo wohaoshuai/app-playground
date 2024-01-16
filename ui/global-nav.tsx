@@ -26,7 +26,7 @@ export function GlobalNav() {
           </div>
 
           <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
-            App Router
+            Free Best AI
           </h3>
         </Link>
       </div>
@@ -68,7 +68,6 @@ export function GlobalNav() {
             );
           })}
         </nav>
-        <Byline className="absolute hidden sm:block" />
       </div>
     </div>
   );

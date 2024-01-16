@@ -6,101 +6,147 @@ export type Item = {
 
 export const demos: { name: string; items: Item[] }[] = [
   {
-    name: 'Layouts',
+    name: 'Stable Diffusion',
     items: [
       {
-        name: 'Nested Layouts',
-        slug: 'layouts',
-        description: 'Create UI that is shared across routes',
-      },
-      {
-        name: 'Grouped Layouts',
-        slug: 'route-groups',
-        description: 'Organize routes without affecting URL paths',
-      },
-      {
-        name: 'Parallel Routes',
-        slug: 'parallel-routes',
-        description: 'Render multiple pages in the same layout',
-      },
-    ],
-  },
-  {
-    name: 'File Conventions',
-    items: [
-      {
-        name: 'Loading',
-        slug: 'loading',
+        name: 'Getting Started with ComfyUI',
+        slug: 'comfyui',
         description:
-          'Create meaningful Loading UI for specific parts of an app',
+          'ComfyUI for Design pipelines, explore image processing, upscaling, and more.',
       },
-      {
-        name: 'Error',
-        slug: 'error-handling',
-        description: 'Create Error UI for specific parts of an app',
-      },
-      {
-        name: 'Not Found',
-        slug: 'not-found',
-        description: 'Create Not Found UI for specific parts of an app',
-      },
+      // {
+      //   name: 'Faster generation with LCM',
+      //   slug: 'lcm',
+      //   description: 'Speed-up the SDXL by 5x faster generation method using LCM',
+      // },
+      // {
+      //   name: 'Basics of SDXL',
+      //   slug: 'sdxl',
+      //   description: 'Overview on how to use SDXL',
+      // },
+      // {
+      //   name: 'Intro to Controlnet',
+      //   slug: 'controlnet',
+      //   description: 'Guide the image generation using images to control by canny, depth, sytle and more',
+      // },
     ],
   },
-  {
-    name: 'Data Fetching',
-    items: [
-      {
-        name: 'Streaming with Suspense',
-        slug: 'streaming',
-        description:
-          'Streaming data fetching from the server with React Suspense',
-      },
-      {
-        name: 'Static Data',
-        slug: 'ssg',
-        description: 'Generate static pages',
-      },
-      {
-        name: 'Dynamic Data',
-        slug: 'ssr',
-        description: 'Server-render pages',
-      },
-      {
-        name: 'Incremental Static Regeneration',
-        slug: 'isr',
-        description: 'Get the best of both worlds between static & dynamic',
-      },
-    ],
-  },
-  {
-    name: 'Components',
-    items: [
-      {
-        name: 'Client Context',
-        slug: 'context',
-        description:
-          'Pass context between Client Components that cross Server/Client Component boundary',
-      },
-    ],
-  },
-  {
-    name: 'Misc',
-    items: [
-      {
-        name: 'Client Component Hooks',
-        slug: 'hooks',
-        description: 'Preview the routing hooks available in Client Components',
-      },
-      {
-        name: 'CSS and CSS-in-JS',
-        slug: 'styling',
-        description: 'Preview the supported styling solutions',
-      },
-      {
-        name: 'Code Snippets',
-        slug: 'snippets',
-        description: 'A collection of useful App Router code snippets',
-      },
-    ],
-  },
+  // {
+  //   name: 'AI Tools',
+  //   items: [
+  //     {
+  //       name: 'Assembo.ai',
+  //       slug: 'assemboai',
+  //       description: 'AI tool for switch image background',
+  //     },
+  //     {
+  //       name: 'ChatGPT',
+  //       slug: 'chatgpt',
+  //       description: 'AI text tool for generating text based on instructions',
+  //     },
+  //     {
+  //       name: 'Midjourney',
+  //       slug: 'midjourney',
+  //       description: 'Unique image generation tool',
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: 'Layouts',
+  //   items: [
+  //     {
+  //       name: 'Nested Layouts',
+  //       slug: 'layouts',
+  //       description: 'Create UI that is shared across routes',
+  //     },
+  //     {
+  //       name: 'Grouped Layouts',
+  //       slug: 'route-groups',
+  //       description: 'Organize routes without affecting URL paths',
+  //     },
+  //     {
+  //       name: 'Parallel Routes',
+  //       slug: 'parallel-routes',
+  //       description: 'Render multiple pages in the same layout',
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: 'File Conventions',
+  //   items: [
+  //     {
+  //       name: 'Loading',
+  //       slug: 'loading',
+  //       description:
+  //         'Create meaningful Loading UI for specific parts of an app',
+  //     },
+  //     {
+  //       name: 'Error',
+  //       slug: 'error-handling',
+  //       description: 'Create Error UI for specific parts of an app',
+  //     },
+  //     {
+  //       name: 'Not Found',
+  //       slug: 'not-found',
+  //       description: 'Create Not Found UI for specific parts of an app',
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: 'Data Fetching',
+  //   items: [
+  //     {
+  //       name: 'Streaming with Suspense',
+  //       slug: 'streaming',
+  //       description:
+  //         'Streaming data fetching from the server with React Suspense',
+  //     },
+  //     {
+  //       name: 'Static Data',
+  //       slug: 'ssg',
+  //       description: 'Generate static pages',
+  //     },
+  //     {
+  //       name: 'Dynamic Data',
+  //       slug: 'ssr',
+  //       description: 'Server-render pages',
+  //     },
+  //     {
+  //       name: 'Incremental Static Regeneration',
+  //       slug: 'isr',
+  //       description: 'Get the best of both worlds between static & dynamic',
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: 'Components',
+  //   items: [
+  //     {
+  //       name: 'Client Context',
+  //       slug: 'context',
+  //       description:
+  //         'Pass context between Client Components that cross Server/Client Component boundary',
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: 'Misc',
+  //   items: [
+  //     {
+  //       name: 'Client Component Hooks',
+  //       slug: 'hooks',
+  //       description: 'Preview the routing hooks available in Client Components',
+  //     },
+  //     {
+  //       name: 'CSS and CSS-in-JS',
+  //       slug: 'styling',
+  //       description: 'Preview the supported styling solutions',
+  //     },
+  //     {
+  //       name: 'Code Snippets',
+  //       slug: 'snippets',
+  //       description: 'A collection of useful App Router code snippets',
+  //     },
+  //   ],
+  // },
 ];
