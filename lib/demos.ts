@@ -23,6 +23,16 @@ export const demos: { name: string; items: Item[] }[] = [
     ],
   },
   {
+    name: 'Stable Diffusion 指南',
+    items: [
+      {
+        name: '如何安装ComfyUI',
+        slug: 'how-to-install-comfyui-cn',
+        description: '探索ComfyUI的安装步骤，学习最受欢迎的SD用户界面。',
+      },
+    ],
+  },
+  {
     name: 'Trending on Github',
     items: [
       {

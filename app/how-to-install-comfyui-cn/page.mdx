@@ -1,0 +1,189 @@
+# 如何安装 ComfyUI - 稳定扩散艺术：详细指南
+
+ComfyUI 是稳定扩散艺术的基于节点的用户界面，因其高度可配置性而在开发者和艺术家中广受欢迎。本指南将为您介绍在 Windows 和 Mac 上安装 ComfyUI 的过程，探讨 ComfyUI 的优势，并提供额外的提示以确保顺利体验。
+
+## ComfyUI 的优势
+
+ComfyUI 以多方面脱颖而出，使其成为稳定扩散用户的首选：
+
+### 1. 轻量化
+
+与 AUTOMATIC1111 等完整功能的图形用户界面不同，ComfyUI 仅加载必要的内容，从而实现较低的内存使用和更快的图像生成速度。
+
+### 2. 灵活性
+
+ComfyUI 非常可配置。您可以轻松地在单个工作流程中生成具有不同 CFG 比例的两个图像，并比较结果。
+
+### 3. 透明度
+
+对于了解稳定扩散工作原理的用户，ComfyUI 显示确切的操作过程，无需猜测。用户可以保存并共享工作流程，提升协作效果。
+
+### 4. 适用于原型设计
+
+对于开发人员而言，ComfyUI 是一个宝贵的工具，可以在将工作流程编码为生产代码之前进行原型设计。
+
+### 5. 前沿工作流
+
+与一些采用谨慎方法推出新功能的 GUI 不同，ComfyUI 保持敏捷性，及时实现最新工具。其基于节点的系统鼓励用户分享工作流，确保获得最新的进展。
+
+## 与本地安装的替代方案
+
+对于寻求更简单解决方案的用户，Think Diffusion 提供了完全托管的 ComfyUI 在线服务。查看 [Think Diffusion](https://www.thinkdiffusion.com/sda?via=inpost-install-comfyui) 以获取无缝访问以及为读者提供的额外 20% 的积分（如果您注册的话，还会提供一小笔佣金以支持本站）。
+
+## 在 Windows 上安装 ComfyUI
+
+### 选项 1: 独立压缩包
+
+1. **安装 7-Zip：** 从 [此页面](https://7-zip.org/) 下载并安装 7-Zip，或使用 [此直接下载链接](https://7-zip.org/a/7z2301-x64.exe)。
+
+2. **下载 ComfyUI：** 使用 [此直接下载链接](https://github.com/comfyanonymous/ComfyUI/releases/download/latest/ComfyUI_windows_portable_nvidia_cu118_or_cpu.7z)。使用 7-Zip 解压文件。
+
+3. **下载 Checkpoint Model：** 获取一个 [checkpoint model](https://stable-diffusion-art.com/models/) 并将其放入 `ComfyUI_windows_portable\ComfyUI\models\checkpoints` 文件夹中。
+
+4. **启动 ComfyUI：** 双击 `run_nvidia_gpu.bat`（适用于 Nvidia GPU）或 `run_cpu.bat`（适用于其他 CPU）。
+
+### 在 Windows 上更新 ComfyUI
+
+要更新 ComfyUI，请双击运行文件 ComfyUI_windows_portable > update > **update_comfyui.bat**。
+
+## 在 Mac M1/M2 上安装 ComfyUI
+
+在 Mac 上安装 ComfyUI 需要更多步骤。您将需要 MacOS 12.3 或更高版本以获得 MPS 加速支持。
+
+单击左上角的 Apple 图标，然后选择 **关于本机** 以检查您的版本。
+
+以下步骤将在虚拟环境中安装 ComfyUI。
+
+### 步骤 1：安装 HomeBrew
+
+[Homebrew](https://brew.sh/) 是 Mac 的包管理器。打开 **终端** 应用程序，粘贴以下命令，然后按回车键。
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### 步骤 2：安装一些必需的包
+
+在新的终端中运行以下命令：
+
+```bash
+brew install cmake protobuf rust [email protected] git wget
+```
+
+### 步骤 3：克隆 ComfyUI
+
+通过在终端中运行以下命令来在本地存储中克隆 ComfyUI 代码：
+
+```bash
+git clone https://github.com/comfyanonymous/ComfyUI
+```
+
+### 步骤 3：安装 ComfyUI
+
+现在进入 ComfyUI 的目录：
+
+```bash
+cd ComfyUI
+```
+
+创建一个虚拟环境：
+
+```bash
+python -m venv venv
+```
+
+在虚拟环境中安装 PyTorch：
+
+```bash
+./venv/bin/pip install torch torchvision torchaudio
+```
+
+安装 ComfyUI 所需的包：
+
+```bash
+./venv/bin/pip install -r requirements.txt
+```
+
+### 步骤 4：下载稳定扩散模型
+
+您需要一个 [模型](https://stable-diffusion-art.com/models) 来运行稳定扩散。使用以下链接下载 [v1.5 模型](https://stable-diffusion-art.com/models/#Stable_diffusion_v15)。
+
+[下载链接](https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt)
+
+将检查点模型放入 `models/checkpoints` 文件夹中。
+
+或者，运行以下命令来下载模型：
+
+```bash
+wget -P models/checkpoints https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt
+```
+
+### 步骤 5：启动 ComfyUI
+
+通过运行以下命令启动 ComfyUI：
+
+```bash
+./venv/bin/python main.py
+```
+
+### 在 Mac 上更新 ComfyUI
+
+在 comfyUI 文件夹中运行以下命令以更新 ComfyUI：
+
+```bash
+git pull
+```
+
+## 生成图像
+
+在首次启动 ComfyUI 后，您应该看到默认的文本到图像工作流。它应该如下所示：
+
+![默认工作流](https://stable-diffusion-art.com/wp-content/uploads/2023/09/image-33-1024x365.png)
+
+如果您看到的不是这个，请点击右侧面板上的 **加载默认** 以返回此默认文本到图像工作流。
+
+### 1. 选择模型
+
+![选择模型](https://stable-diffusion-art.com/wp-content/uploads/2023/09/image-34.png)
+
+首先，在 **加载检查点** 节点中选择一个稳定扩散 [检查点模型](https://stable-diffusion-art.com/models/)。点击模型名称以显示可用模型的列表。
+
+如果节点太小，您可以使用鼠标滚轮或触摸板上的两个手指捏合来放大和缩小。
+
+如果点击模型名称没有任何反应，则可能尚未安装模型或配置为使用现有模型。返回到安装部分首先解决它。
+
+### 2. 输入提示和负面提示
+
+![输入提示](https://stable-diffusion-art.com/wp-content/uploads/2023/09/image-35-1024x818.png)
+
+您应该看到两个带有标签 **CLIP 文本编码（提示）** 的节点。在顶部一个中输入您的 **提示**，在底部一个中输入您的 **负面提示**。
+
+### 3. 生成图像
+
+点击 **排队提示** 以运行工作流程。等待片刻后，您应该看到生成的第一幅图像。
+
+![生成图像](https://stable-diffusion-art.com/wp-content/uploads/2023/09/image-36.png)
+
+如果您在您的 PC 上安装了 [AUTOMATIC1111 稳定扩散 WebUI](https://stable-diffusion-art.com/install-windows/)，您应该在 AUTOMATIC1111 和 ComfyUI 之间共享模型文件。否则，您的硬盘将非常充实...
+
+将文件 `ComfyUI_windows_portable > ComfyUI > extra_model_paths.yaml.example` 重命名为 `extra_model_paths.yaml`。
+
+更改这一行：
+
+```yaml
+base_path: path/to/stable-diffusion-webui/
+```
+
+将 `path/to/stable-diffusion-webui/` 替换为实际路径。例如：
+
+```yaml
+base_path: C:\Users\USERNAME\stable-diffusion-webui
+```
+
+完全重新启动 ComfyUI。如果配置正确，单击 **加载检查点** 节点中的 **ckpt_name** 字段时，您应该看到模型的完整列表。
+
+![模型列表](https://stable-diffusion-art.com/wp-content/uploads/2023/09/image-32.png)
+
+您可以使用此技术在 AUTOMATIC1111 和 ComfyUI 之间共享 [LoRA](https://stable-diffusion-art.com/lora/)、[文本反转](https://stable-diffusion-art.com/embedding/) 等。
+
+本文通过 ChatGPT 自动翻译其它网站文章
