@@ -63,22 +63,25 @@ export default function ComfyUiGuide() {
           </li>
           <li>
             Place your Stable Diffusion checkpoints/models in the
-            "ComfyUI\models\checkpoints" directory.
+            &ldquo;ComfyUI\models\checkpoints&rdquo; directory.
           </li>
         </ul>
 
         <h3>Jupyter Notebook or Manual Install (Windows, Linux):</h3>
         <ul>
-          <li>Clone the "ComfyUI" repository from GitHub.</li>
+          <li>Clone the &ldquo;ComfyUI&rdquo; repository from GitHub.</li>
           <li>
             Organize your SD checkpoints and VAE models in the specified
             directories.
           </li>
           <li>
-            Install dependencies by running "pip install -r requirements.txt" in
-            the ComfyUI folder.
+            Install dependencies by running &ldquo;pip install -r
+            requirements.txt&rdquo; in the ComfyUI folder.
           </li>
-          <li>You're ready to start experimenting with "ComfyUI."</li>
+          <li>
+            You&rsquo;re ready to start experimenting with
+            &ldquo;ComfyUI.&rdquo;
+          </li>
         </ul>
 
         <h3>Other Platforms (AMD, Intel, Apple):</h3>
@@ -87,8 +90,8 @@ export default function ComfyUiGuide() {
             Follow platform-specific instructions provided in the documentation.
           </li>
           <li>
-            Ensure to add models, VAEs, and LoRAs to the corresponding "ComfyUI"
-            folders.
+            Ensure to add models, VAEs, and LoRAs to the corresponding
+            &ldquo;ComfyUI&rdquo; folders.
           </li>
         </ul>
       </section>
