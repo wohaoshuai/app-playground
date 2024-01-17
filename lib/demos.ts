@@ -6,6 +6,26 @@ export type Item = {
 
 export const demos: { name: string; items: Item[] }[] = [
   {
+    name: 'Toolbox',
+    items: [
+      {
+        name: 'URL to Markdown File',
+        slug: 'url-to-md',
+        description: 'Create .md format text from an URL',
+      },
+    ],
+  },
+  {
+    name: '工具箱',
+    items: [
+      {
+        name: 'URL转MD文件',
+        slug: 'url-to-md-cn',
+        description: '提取网络链接中的文本, 转换为.md格式',
+      },
+    ],
+  },
+  {
     name: 'Stable Diffusion',
     items: [
       {
