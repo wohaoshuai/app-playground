@@ -6,15 +6,15 @@ import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Next.js App Router',
-    template: '%s | Next.js App Router',
+    default: 'Free Best AI',
+    template: '%s | Free Best AI',
   },
   description:
-    'A playground to explore new Next.js App Router features such as nested layouts, instant loading states, streaming, and component level data fetching.',
+    'Fastest way to find the Best Free AI tools or Lean AIGC skills or guide here',
   openGraph: {
-    title: 'Next.js App Router Playground',
+    title: 'Free Best AI',
     description:
-      'A playground to explore new Next.js App Router features such as nested layouts, instant loading states, streaming, and component level data fetching.',
+      'Fastest way to find the Best Free AI tools or Lean AIGC skills or guide here',
     images: [`/api/og?title=Next.js App Router`],
   },
   twitter: {

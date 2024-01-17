@@ -3,7 +3,7 @@ import { ClickCounter } from '#/ui/click-counter';
 import { TabGroup } from '#/ui/tab-group';
 import React from 'react';
 
-const title = 'Nested Layouts';
+const title = 'Article';
 
 export const metadata = {
   title,
