@@ -1,0 +1,56 @@
+# Astro Islands | 文档
+
+Astro 作为一股先锋力量，引领了一种被称为 **Islands** 的前端架构革新。这种架构模式通过避免庞大的 JavaScript 模式并自动从页面中剥离所有非必要的 JavaScript，显著提升了前端性能。在 Astro 中，开发人员可以继续使用他们喜欢的 UI 组件和框架，同时享受到 Islands 的好处。
+
+"组件岛" 这个术语最初是由 [Katie Sylor-Miller](https://twitter.com/ksylor) 在 2019 年首次提出的，她是 Etsy 的前端架构师。这个概念随后由 Preact 的创作者 Jason Miller 在 2020 年 8 月 11 日的 [这篇文章](https://jasonformat.com/islands-architecture/) 中进一步阐述和记录。
+
+> "‘Islands’ 架构的一般思想看似简单：在服务器上渲染 HTML 页面，并在高度动态的区域周围注入占位符或插槽 \[…\]，然后在客户端将其“注水”，形成小而自包含的小部件，重用其服务器渲染的初始 HTML。"
+> — Jason Miller，Preact 创作者
+
+这种架构模式依赖的技术称为 **部分** 或 **选择性注水**。
+
+相比之下，许多基于 JavaScript 的 Web 框架将整个网站渲染为一个大型 JavaScript 应用程序（也称为单页面应用程序，SPA）。SPA 提供简便和强大的功能，但由于大量客户端 JavaScript 的使用，导致页面加载性能问题。
+
+SPA 有其用武之地，甚至可以 [嵌入到 Astro 页面中](https://docs.astro.build/en/guides/migrate-to-astro/from-create-react-app/)。但 SPA 缺乏选择性和有策略地进行注水的本地能力，使其成为当今大多数 Web 项目的沉重选择。
+
+Astro 以内置选择性注水的方式成为第一个主流的 JavaScript Web 框架，使用了由 Sylor-Miller 提出的组件岛模式。
+
+**在 Astro 中，“岛” 指的是页面上的任何交互式 UI 组件。** 将岛视为在一片静态、轻量级、服务器渲染的 HTML 海洋中漂浮的交互式小部件。
+
+像文本、图像等静态内容。
+
+图像轮播（交互式岛）
+
+来源：[Islands Architecture: Jason Miller](https://jasonformat.com/islands-architecture/)
+
+岛始终在页面上与其他岛隔离运行，页面上可以存在多个岛。尽管运行在不同的组件上下文中，岛仍然可以共享状态并相互通信。
+
+这种灵活性使 Astro 能够支持多个 UI 框架，如 [React](https://react.dev/)、[Preact](https://preactjs.com/)、[Svelte](https://svelte.dev/)、[Vue](https://vuejs.org/) 和 [SolidJS](https://www.solidjs.com/)。由于它们是独立的，您甚至可以在每个页面上混合使用几个框架。
+
+默认情况下，Astro 会自动将每个 UI 组件渲染为纯 HTML 和 CSS，**自动删除所有客户端 JavaScript**。
+
+虽然这听起来可能有些严格，但这种行为确保 Astro 网站默认情况下保持快速，并保护开发人员免受不必要或不希望的可能减缓网站速度的 JavaScript 的意外发送。
+
+将任何静态 UI 组件转换为交互式岛只需使用 `client:*` 指令。然后，Astro 会自动构建和捆绑您的客户端 JavaScript，以实现优化的性能。
+
+```html
+<!-- 此组件现在在页面上是交互式的！
+     您的网站的其余部分保持静态。 -->
+<MyReactComponent client:load />
+```
+
+使用岛时，客户端 JavaScript 仅用于使用 `client:*` 指令标记的显式交互式组件。
+
+由于交互在组件级别配置，因此您可以根据其用途处理每个组件的不同加载优先级。例如，`client:idle` 告诉组件在浏览器变得空闲时加载，而 `client:visible` 告诉组件仅在进入视口时加载。
+
+使用 Astro 岛构建的最明显的好处之一是性能：网站的大部分被转换为快速的静态 HTML，JavaScript 仅在需要的个别组件中加载。由于 JavaScript 是按字节加载的最慢的资源之一，每个字节都很重要。
+
+另一个好处是并行加载。在上面的示例中，低优先级的“图像轮播”岛不需要阻止高优先级的“标题
+
+”岛。这两个岛可以并行加载和独立注水，这意味着标题可以立即变得交互，而不必等待页面底部较重的轮播。
+
+更好的是，您可以精确地告诉 Astro 如何以及何时渲染每个组件。如果加载该图像轮播很昂贵，您可以附加一个特殊的 [客户端指令](https://docs.astro.build/en/reference/directives-reference/#client-directives)，告诉 Astro 仅在页面上可见时加载轮播。如果用户从未看到它，它就永远不会加载。
+
+在 Astro 中，作为开发人员，您需要明确告诉 Astro 页面上哪些组件也需要在浏览器中运行。Astro 只会在页面上准确注水所需的内容，将其余部分保留为静态 HTML。
+
+**岛是 Astro 快速默认性能的秘密！**

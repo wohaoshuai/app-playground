@@ -72,6 +72,22 @@ export const demos: { name: string; items: Item[] }[] = [
       },
     ],
   },
+  {
+    name: '前端观察',
+    items: [
+      {
+        name: 'Astro超快的一揽子框架',
+        slug: 'astro-intro-cn',
+        description: '基于React,最受程序员好评的新兴框架',
+      },
+      {
+        name: 'Astro Islands架构解析',
+        slug: 'astro-island-cn',
+        description:
+          'Astro Islands架构是一项前端创新，通过服务器渲染和选择性注水的方式，使页面更快加载。',
+      },
+    ],
+  },
   // {
   //   name: 'AI Tools',
   //   items: [
