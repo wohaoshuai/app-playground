@@ -73,6 +73,16 @@ export const demos: { name: string; items: Item[] }[] = [
     ],
   },
   {
+    name: 'HackerNews资讯',
+    items: [
+      {
+        name: 'HackerNews 第1期',
+        slug: 'hackernews-001-cn',
+        description: '#1 在HackerNews上发现热门话题',
+      },
+    ],
+  },
+  {
     name: '前端观察',
     items: [
       {
